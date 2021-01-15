@@ -79,7 +79,6 @@ class MainTableViewController: UITableViewController {
     //MARK: Get Users
     func getAPIUsers() {
 //        cancelablle = NetworkingService.shared.getUsers()
-<<<<<<< HEAD
 //            .sink(receiveCompletion: { _ in }, receiveValue: { users in
 //                users.forEach({
 //                    let realmObject: RealmUser = .init($0)
@@ -87,21 +86,7 @@ class MainTableViewController: UITableViewController {
 //                })
 //                self.fetchAllRealmUsersAndUpdateSnapshot()
 //            })
-            
-        
-=======
-//            .catch { _ in Just(APIUsersResponse.returnEmpty()) }
-//            .map { $0.users }
-//            .map { users in
-//                users.forEach({
-//                    let realmObject: RealmUser = .init($0)
-//                    RealmService.shared.create(realmObject)
-//                    print("zzz realmObject \(realmObject.name)")
-//                })
-//            }
-            
-            
->>>>>>> f42c770d6212e1533ea2b66f3448d1d0c26b4cec
+
         NetworkingService.shared.getUsers { result in
             switch result {
             case .success(let users):

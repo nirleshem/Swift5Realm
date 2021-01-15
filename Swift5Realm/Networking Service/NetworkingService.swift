@@ -12,12 +12,8 @@ class NetworkingService {
     
     private init() {}
     static let shared = NetworkingService()
-    
-<<<<<<< HEAD
-//    func getUsers() -> AnyPublisher<[APIUser], Error> {
-=======
+
 //    func getUsers() -> AnyPublisher<APIUsersResponse, Error> {
->>>>>>> f42c770d6212e1533ea2b66f3448d1d0c26b4cec
 //
 //        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else {
 //            fatalError("Invalid Url")
@@ -31,11 +27,6 @@ class NetworkingService {
 //                }
 //                return data
 //            }
-<<<<<<< HEAD
-//            .decode(type: [APIUser].self, decoder: JSONDecoder())
-=======
-//            .decode(type: APIUsersResponse.self, decoder: JSONDecoder())
->>>>>>> f42c770d6212e1533ea2b66f3448d1d0c26b4cec
 //            .receive(on: RunLoop.main)
 //            .eraseToAnyPublisher()
 //    }
@@ -47,24 +38,14 @@ class NetworkingService {
         let session = URLSession(configuration: config)
         return session
     }
-<<<<<<< HEAD
 
-    func getUsers(completionHandler: @escaping (Result<[APIUser], NetworkingError>) -> ()) {
-
-=======
-    
     func getUsers(completionHandler: @escaping (Result<[APIUser], NetworkingError>) -> ()) {
         
->>>>>>> f42c770d6212e1533ea2b66f3448d1d0c26b4cec
         guard let url = URL(string: "https://jsonplaceholder.typicode.com/users/") else {
             completionHandler(.failure(.BadURL))
             return
         }
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> f42c770d6212e1533ea2b66f3448d1d0c26b4cec
         let task = getUrlSession().dataTask(with: url) { (data, response, error) in
 
             guard let data = data, let response = response as? HTTPURLResponse else { return }
